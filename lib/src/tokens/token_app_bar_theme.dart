@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
+import 'package:design_sos/design_sos.dart';
 import 'package:design_sos/src/utils/border_radius_cast.dart';
 import 'package:design_sos/src/utils/color_conversion.dart';
-import 'package:design_sos/design_sos.dart';
+import 'package:flutter/material.dart';
 
 class TokenAppBarTheme extends AppBarTheme with TokenAttributes {
   final BorderRadius? borderRadius;
@@ -22,7 +22,7 @@ class TokenAppBarTheme extends AppBarTheme with TokenAttributes {
         centerTitle: json?['centerTitle'] ?? false,
         backgroundColor: convertColor(json?['backgroundColor'] ?? '') ?? Colors.blue,
         foregroundColor: convertColor(json?['foregroundColor'] ?? '') ?? Colors.white,
-        elevation: json?['elevation'] ?? 4,
+        elevation: json?['elevation'].toDouble() ?? (4).toDouble(),
         shadowColor: convertColor(json?['shadowColor'] ?? ''),
         surfaceTintColor: convertColor(json?['surfaceTintColor'] ?? ''),
         borderRadius: borderRadiusFromJson(json?['borderRadius'] ?? {}) ?? BorderRadius.zero,

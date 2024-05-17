@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
+import 'package:design_sos/design_sos.dart';
 import 'package:design_sos/src/utils/border_radius_cast.dart';
 import 'package:design_sos/src/utils/color_conversion.dart';
-import 'package:design_sos/design_sos.dart';
+import 'package:flutter/material.dart';
 
 class TokenBottomSheetTheme extends BottomSheetThemeData with TokenAttributes {
   TokenBottomSheetTheme({required Color super.backgroundColor, super.elevation, super.modalBackgroundColor, super.modalElevation, BorderRadius? borderRadius})
@@ -9,7 +9,7 @@ class TokenBottomSheetTheme extends BottomSheetThemeData with TokenAttributes {
 
   factory TokenBottomSheetTheme.fromJson(Map<String, dynamic> json) => TokenBottomSheetTheme(
       backgroundColor: convertColor(json['backgroundColor'] ?? '') ?? Colors.white,
-      elevation: json['elevation'] ?? 24,
+      elevation: json['elevation'].toDouble() ?? (24).toDouble(),
       modalBackgroundColor: convertColor(json['modalBackgroundColor'] ?? ''),
       modalElevation: json['modalElevation'] ?? 24,
       borderRadius: borderRadiusFromJson(json['borderRadius'] ?? {}));

@@ -61,16 +61,16 @@ class TokenElevatedButtonTheme extends ElevatedButtonThemeData with TokenAttribu
           ),
         ));
 
-  factory TokenElevatedButtonTheme.fromJson(Map<String, dynamic> json, {TextStyle? textStyle}) => TokenElevatedButtonTheme(
+  factory TokenElevatedButtonTheme.fromJson(Map<String, dynamic>? json, {TextStyle? textStyle}) => TokenElevatedButtonTheme(
         textStyle: textStyle,
-        backgroundColor: convertColor(json['backgroundColor']) ?? Colors.transparent,
-        padding: EdgeInsetsExtension.fromJson(json['padding']),
-        borderRadius: borderRadiusFromJson(json['borderRadius']),
-        foregroundColor: convertColor(json['foregroundColor']) ?? Colors.transparent,
-        disabledColor: convertColor(json['disabledColor']) ?? Colors.transparent,
-        disabledTextColor: convertColor(json['disabledTextColor']) ?? Colors.transparent,
-        elevation: json['elevation'],
-        overlayColor: convertColor(json['overlayColor']) ?? Colors.transparent,
+        backgroundColor: convertColor(json?['backgroundColor']) ?? Colors.transparent,
+        padding: EdgeInsetsExtension.fromJson(json?['padding']),
+        borderRadius: borderRadiusFromJson(json?['borderRadius']),
+        foregroundColor: convertColor(json?['foregroundColor']) ?? Colors.transparent,
+        disabledColor: convertColor(json?['disabledColor']) ?? Colors.transparent,
+        disabledTextColor: convertColor(json?['disabledTextColor']) ?? Colors.transparent,
+        elevation: json?['elevation'],
+        overlayColor: convertColor(json?['overlayColor']) ?? Colors.transparent,
       );
 
   @override

@@ -8,7 +8,7 @@ class TokenDividerTheme extends DividerThemeData with TokenAttributes {
   factory TokenDividerTheme.fromJson(Map<String, dynamic> json) => TokenDividerTheme(
         color: convertColor(json['color'] ?? '') ?? Colors.transparent,
         space: json['space'] ?? 16,
-        thickness: json['thickness'] ?? 2,
+        thickness: json['thickness'].toDouble() ?? (2).toDouble(),
       );
 
   @override

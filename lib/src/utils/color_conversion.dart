@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-Color? convertColor(String colorFromBack) {
+Color? convertColor(String? colorFromBack) {
+  if (colorFromBack == null) return null;
   try {
     int parsedColor = int.tryParse(colorFromBack) ?? 0xFFFFFF;
 
