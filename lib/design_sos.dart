@@ -1,4 +1,4 @@
-library desing_sos;
+library design_sos;
 
 export 'src/factories/theme_manager.dart';
 export 'src/interfaces/interfaces.dart';
