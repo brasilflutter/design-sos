@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 
 extension TextStyleExtension on TextStyle {
   TextStyle fromJson(Map<String, dynamic> json) {
+    final double fontSize = double.tryParse(json['fontSize']?.toString() ?? '') ?? 14.0;
+
     return TextStyle(
       color: convertColor(json['color']),
-      fontSize: json['fontSize'] ?? 14.0,
+      fontSize: fontSize,
       fontWeight: jsonToFontWeight(json['fontWeight'] ?? 'normal'),
     );
   }
