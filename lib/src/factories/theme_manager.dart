@@ -6,10 +6,7 @@ import '../themes/default_theme.dart';
 abstract class ThemeManager {
   static ThemeData createThemeData({required ITheme theme, String? fontFamily}) {
     final definedTheme = ThemeData(
-      useMaterial3: true,
-      extensions: {
-        theme.tokenPadding,
-      },
+      extensions: {theme.tokenPadding},
       colorScheme: theme.tokenColors,
       textTheme: theme.tokenTextTheme,
       elevatedButtonTheme: theme.tokenButtonsTheme.tokenElevatedButtonTheme,

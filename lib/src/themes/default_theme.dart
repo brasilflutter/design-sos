@@ -69,7 +69,6 @@ class DefaultTheme extends ITheme {
             labelLarge: const TextStyle(),
             labelMedium: const TextStyle(),
             labelSmall: const TextStyle(),
-            overline: const TextStyle(),
             titleLarge: const TextStyle(),
             titleMedium: const TextStyle(),
             titleSmall: const TextStyle(),

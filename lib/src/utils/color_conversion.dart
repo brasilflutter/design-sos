@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 
-Color? convertColor(String? colorFromBack) {
-  if (colorFromBack == null) return null;
+Color convertColor(String? colorFromBack) {
+  if (colorFromBack == null) return const Color(0xFF000000);
   try {
     int parsedColor = int.tryParse(colorFromBack) ?? 0xFFFFFF;
-
-    return Color(parsedColor); // Adiciona a opacidade alpha.
+    return Color(parsedColor);
   } catch (e) {
     print('Erro ao converter a cor: $e');
   }
 
-  return const Color(0xFF000000).withOpacity(0.4);
+  return const Color(0xFF000000);
 }

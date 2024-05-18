@@ -1,8 +1,8 @@
 import 'dart:convert';
 
+import 'package:design_sos/design_sos.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:design_sos/design_sos.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -44,9 +44,19 @@ class _HomeMyDesignState extends State<HomeMyDesign> {
 
   @override
   Widget build(BuildContext context) {
+    print('theme: ${Theme.of(context).textTheme.displayMedium?.color}');
     return Scaffold(
       appBar: AppBar(
-        title: const Text('My Design'),
+        title: Row(
+          children: [
+            Text('Display Small', style: Theme.of(context).textTheme.displayMedium),
+            Container(
+              color: const Color(0xfffcf4ff),
+              width: 10,
+              height: 10,
+            ),
+          ],
+        ),
       ),
       body: PageView(
         controller: pageController,
@@ -54,6 +64,7 @@ class _HomeMyDesignState extends State<HomeMyDesign> {
         scrollDirection: Axis.vertical,
         children: [
           ExamplePage(exampleItem: widget.theme.tokenColors, exampleTitle: widget.theme.tokenColors.title),
+          ExamplePage(exampleItem: widget.theme.tokenTextTheme, exampleTitle: widget.theme.tokenTextTheme.title),
           ExamplePage(exampleItem: widget.theme.tokenAppBarTheme, exampleTitle: widget.theme.tokenAppBarTheme.title),
           ExamplePage(exampleItem: widget.theme.tokenBottomNavigationBarTheme, exampleTitle: widget.theme.tokenBottomNavigationBarTheme.title),
           ExamplePage(exampleItem: widget.theme.tokenBottomSheetTheme, exampleTitle: widget.theme.tokenBottomSheetTheme.title),
